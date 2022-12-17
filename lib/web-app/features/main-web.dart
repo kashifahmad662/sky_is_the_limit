@@ -11,8 +11,13 @@ class WebApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = Get.size;
     return ScreenUtilInit(
-        designSize: const Size(1440, 950),
+        designSize: size.width < 500
+            ? const Size(350, 720)
+            : size.width > 500 && size.width < 1000
+                ? const Size(500, 800)
+                : const Size(1440, 950),
         minTextAdapt: true,
         builder: (context, snapshot) {
           return LayoutBuilder(
@@ -22,8 +27,9 @@ class WebApp extends StatelessWidget {
                 // SystemChrome.setPreferredOrientations(
                 //     [DeviceOrientation.portraitUp]);
                 return GetMaterialApp(
-                  title: 'Contact Center',
+                  title: 'Sky is the limit',
                   theme: ThemeData(
+                      fontFamily: 'Roboto',
                       scaffoldBackgroundColor: pureWhite,
                       visualDensity: VisualDensity.adaptivePlatformDensity),
                   //   onGenerateRoute: GenerateRoute.generateRoute,

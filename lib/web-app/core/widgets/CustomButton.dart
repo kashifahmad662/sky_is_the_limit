@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:skyisthelimit/web-app/core/responsive/SizeConfig.dart';
+import 'package:test/web-app/core/responsive/SizeConfig.dart';
 
 import '../constants/app-text-style.dart';
 import '../constants/colors.dart';
@@ -31,15 +31,6 @@ class CustomButton extends StatelessWidget {
       children: [
         Expanded(
           child: TextButton(
-            child: Text(
-              text.toUpperCase(),
-              style: textStyle ??
-                  AppTextStyle.ttCommon16.copyWith(
-                    fontSize: 12 * SizeConfig.textMultiplier!,
-                    fontWeight: FontWeight.w700,
-                    color: black3E,
-                  ),
-            ),
             onPressed: onPressed,
             style: TextButton.styleFrom(
                 animationDuration: const Duration(milliseconds: 300),
@@ -57,6 +48,15 @@ class CustomButton extends StatelessWidget {
                 ),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(borderRadius))),
+            child: Text(
+              text.toUpperCase(),
+              style: textStyle ??
+                  AppTextStyle.ttCommon16.copyWith(
+                    fontSize: 12 * SizeConfig.textMultiplier!,
+                    fontWeight: FontWeight.w700,
+                    color: black3E,
+                  ),
+            ),
           ),
         ),
       ],

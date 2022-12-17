@@ -3,10 +3,8 @@ import 'package:get/get.dart';
 
 class HomeController extends GetxController {
   List<String> courseType = [
-    'Associate Level',
     "Bachelor's Level",
     "Master's Level",
-    'Doctorate'
   ];
   Rx<DateTime> formDOB = DateTime.now().obs;
   RxString selectedCourseType = "".obs;
@@ -15,6 +13,7 @@ class HomeController extends GetxController {
   final TextEditingController? phoneController = TextEditingController();
   final TextEditingController? programController = TextEditingController();
   final TextEditingController? commentController = TextEditingController();
+  final TextEditingController? dobController = TextEditingController();
 
   clearControllerValues() {
     nameController?.clear();

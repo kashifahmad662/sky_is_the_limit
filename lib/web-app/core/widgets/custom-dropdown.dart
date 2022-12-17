@@ -2,7 +2,8 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:skyisthelimit/web-app/core/responsive/SizeConfig.dart';
+import 'package:test/web-app/core/constants/responsive_ui.dart';
+import 'package:test/web-app/core/responsive/SizeConfig.dart';
 
 import '../constants/app-text-style.dart';
 import '../constants/colors.dart';
@@ -28,22 +29,33 @@ class CustomDropDown extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      child: Row(
+      child: Flex(
         mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: ResponsiveWidget.isWebScreen
+            ? CrossAxisAlignment.center
+            : CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
+        direction:
+            ResponsiveWidget.isWebScreen ? Axis.horizontal : Axis.vertical,
         children: [
           if (labelText != null)
-            Text(labelText.toString(),
+            Text(labelText ?? '',
                 style: AppTextStyle.regularBlack62Text.copyWith(
-                    color: black62, fontWeight: FontWeight.w600, fontSize: 18)),
-          SizedBox(width: 6 * SizeConfig.widthMultiplier!),
+                    color: black62,
+                    fontWeight: FontWeight.w600,
+                    fontSize: ResponsiveWidget.isMobile
+                        ? 14 * SizeConfig.textMultiplier!
+                        : 18 * SizeConfig.textMultiplier!)),
+          SizedBox(
+            width: 10 * SizeConfig.widthMultiplier!,
+            height: (ResponsiveWidget.isMobile ? 7 : 0) *
+                SizeConfig.heightMultiplier!,
+          ),
           SizedBox(
               width: width ?? double.infinity,
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Container(
-                  height: 40 * SizeConfig.heightMultiplier!,
                   width: Get.width,
                   decoration: BoxDecoration(
                       border: Border.all(
@@ -52,13 +64,35 @@ class CustomDropDown extends StatelessWidget {
                       ),
                       borderRadius: BorderRadius.circular(5)),
                   child: DropdownButton2(
+                    selectedItemBuilder: (context) {
+                      return [
+                        Text(
+                          value ?? '',
+                          style: AppTextStyle.regularBlack62Text.copyWith(
+                              fontSize: ResponsiveWidget.isWebScreen
+                                  ? 18 * SizeConfig.textMultiplier!
+                                  : 14 * SizeConfig.textMultiplier!),
+                        )
+                      ];
+                    },
+                    isDense: true,
+                    style: AppTextStyle.regularBlack62Text.copyWith(
+                        fontSize: ResponsiveWidget.isWebScreen
+                            ? 18 * SizeConfig.textMultiplier!
+                            : 14 * SizeConfig.textMultiplier!),
                     isExpanded: true,
                     hint: Text(
                       hint.toString(),
-                      style: AppTextStyle.regularBlack62Text
-                          .copyWith(color: grey128),
+                      style: AppTextStyle.regularBlack62Text.copyWith(
+                          color: grey,
+                          fontSize: ResponsiveWidget.isWebScreen
+                              ? 18 * SizeConfig.textMultiplier!
+                              : 14 * SizeConfig.textMultiplier!),
                       overflow: TextOverflow.ellipsis,
                     ),
+                    buttonHeight: ResponsiveWidget.isWebScreen
+                        ? 50 * SizeConfig.heightMultiplier!
+                        : 40 * SizeConfig.heightMultiplier!,
                     underline: Container(),
                     items: listofItems
                         .map((item) => DropdownMenuItem<String>(
@@ -79,17 +113,12 @@ class CustomDropDown extends StatelessWidget {
                     onChanged: onChanged,
                     icon: Align(
                       alignment: Alignment.centerLeft,
-                      child: Padding(
-                          padding: EdgeInsets.only(
-                              right: 0.0 * SizeConfig.widthMultiplier!),
-                          child: Icon(
-                            Icons.keyboard_arrow_down_sharp,
-                            size: 15 * SizeConfig.imageSizeMultiplier!,
-                            color: color,
-                          )),
+                      child: Icon(
+                        Icons.keyboard_arrow_down_sharp,
+                        size: 15 * SizeConfig.imageSizeMultiplier!,
+                        color: color,
+                      ),
                     ),
-                    iconSize: 0.0,
-                    buttonPadding: const EdgeInsets.only(left: 14, right: 14),
                     buttonDecoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(14),
                       border: Border.all(
@@ -97,8 +126,12 @@ class CustomDropDown extends StatelessWidget {
                       ),
                     ),
                     dropdownMaxHeight: 296 * SizeConfig.heightMultiplier!,
-                    // dropdownWidth: 320,
                     dropdownPadding: null,
+                    buttonPadding: ResponsiveWidget.isWebScreen
+                        ? EdgeInsets.symmetric(
+                            horizontal: 0 * SizeConfig.widthMultiplier!,
+                            vertical: 0 * SizeConfig.heightMultiplier!)
+                        : null,
                     dropdownDecoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(0),
                       color: Colors.white,

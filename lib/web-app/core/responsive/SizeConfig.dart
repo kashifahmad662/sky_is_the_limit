@@ -6,8 +6,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class SizeConfig {
   static double? _screenWidth;
   static double? _screenHeight;
-  static double _blockSizeHorizontal = 0;
-  static double _blockSizeVertical = 0;
 
   static double? textMultiplier;
   static double? imageSizeMultiplier;
@@ -31,20 +29,26 @@ class SizeConfig {
     // }
     _screenWidth = constraints.maxWidth;
     _screenHeight = constraints.maxHeight;
-    _blockSizeHorizontal = _screenWidth! / 100;
-    _blockSizeVertical = _screenHeight! / 100;
     log(_screenWidth.toString());
 
-    if (_screenWidth! > 1400.0) {
+    if (_screenWidth! > 1400.0 || _screenWidth! >= 1000) {
+      textMultiplier = 1.sp;
+      imageSizeMultiplier = 1;
+      heightMultiplier = 1.h;
+      widthMultiplier = 1.w;
+    } else if (_screenWidth! < 1000 && _screenWidth! > 500) {
       textMultiplier = 1.sp;
       imageSizeMultiplier = 1;
       heightMultiplier = 1.h;
       widthMultiplier = 1.w;
     } else {
-      textMultiplier = 1;
+      ScreenUtil().setSp(500);
+      _screenHeight = _screenHeight;
+      textMultiplier = 1.sp;
       imageSizeMultiplier = 1;
-      heightMultiplier = 1;
-      widthMultiplier = 1;
+      ScreenUtil().screenHeight;
+      heightMultiplier = 1.h;
+      widthMultiplier = 1.w;
     }
   }
 }

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:test/web-app/core/constants/responsive_ui.dart';
 
 import '../../../core/constants/app-text-style.dart';
 import '../../../core/constants/colors.dart';
 import '../../../core/responsive/SizeConfig.dart';
+import 'package:get/get.dart';
 
 class CommonTextWidget extends StatelessWidget {
   CommonTextWidget({
@@ -23,21 +24,14 @@ class CommonTextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(
-          top: 30 * SizeConfig.heightMultiplier!,
-          bottom: 40 * SizeConfig.heightMultiplier!,
-          left: 60 * SizeConfig.widthMultiplier!),
+          top: (ResponsiveWidget.isWebScreen ? 60 : 40) *
+              SizeConfig.heightMultiplier!),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            title.toString(),
-            style: AppTextStyle.ttCommon16.copyWith(
-                fontSize: (40) * SizeConfig.textMultiplier!,
-                fontWeight: FontWeight.w800,
-                color: Colors.red),
-          ),
+          Text(title.toString(), style: AppTextStyle.titleStyle),
           if (wantImage == true)
             SizedBox(
               height: 20 * SizeConfig.heightMultiplier!,
@@ -45,23 +39,11 @@ class CommonTextWidget extends StatelessWidget {
           if (wantImage == true)
             Image.asset(
               image.toString(),
-              height: Get.height * 0.7,
-              width: Get.width * 0.8,
             ),
           SizedBox(
             height: 20 * SizeConfig.heightMultiplier!,
           ),
-          SizedBox(
-            width: Get.width * 0.7,
-            child: Text(
-              subtitle.toString(),
-              style: AppTextStyle.ttCommon16.copyWith(
-                  height: 2,
-                  fontSize: (22) * SizeConfig.textMultiplier!,
-                  fontWeight: FontWeight.w400,
-                  color: black62),
-            ),
-          ),
+          Text(subtitle.toString(), style: AppTextStyle.lightLabelStyle),
         ],
       ),
     );

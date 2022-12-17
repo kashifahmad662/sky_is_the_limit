@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c7abf001-1a76-4ce8-bad5-40d9baa95cbb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sky_is_the_limit.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Roboto-Black.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Roboto-BlackItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Roboto-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Roboto-BoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Roboto-Italic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Roboto-Light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Roboto-LightItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Roboto-Medium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Roboto-MediumItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Roboto-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Roboto-Thin.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Roboto-ThinItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/carousal1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/carousal3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/carousal4.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/carousal5.jpg.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/carousal6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/carousal7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/footer_bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/founder.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/turkey1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/turkey2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/turkey3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/turkey4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/web-app/core/constants/extention.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/web-app/core/constants/responsive_ui.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/web-app/core/widgets/contact_details_ui.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/web-app/core/widgets/footer_ui.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/web-app/core/widgets/line_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/web-app/core/widgets/university_labels.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/web-app/core/widgets/why_turkey_ui.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis_options.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/analysis_options.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/carousal1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/carousal2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/carousal3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/carousal4.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/carousal5.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/9e1e557336e0c5cf1e1440955f4af220/_composite.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/9e1e557336e0c5cf1e1440955f4af220/gen_dart_plugin_registrant.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/9e1e557336e0c5cf1e1440955f4af220/gen_localizations.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/FontManifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/NOTICES" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/fonts/Montserrat-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/fonts/TT%20Commons%20Bold.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/fonts/TT%20Commons%20DemiBold.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/fonts/TT%20Commons%20Medium.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/fonts/TT%20Commons%20Regular.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/images/carousal1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/images/carousal2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/images/carousal3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/images/carousal4.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/images/carousal5.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/images/image1.jpeg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/images/image2.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/images/image3.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/images/image4.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/images/image5.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/images/image6.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/images/image7.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/images/image8.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/images/image9.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/images/logo.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/fonts/MaterialIcons-Regular.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/shaders/ink_sparkle.frag" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/last_build_run.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Debug.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Release.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/web-app/core/constants/app-text-style.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/web-app/core/constants/app-text-style.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/web-app/core/constants/colors.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/web-app/core/constants/colors.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/web-app/core/constants/image-paths.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/web-app/core/constants/image-paths.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/web-app/core/responsive/SizeConfig.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/web-app/core/responsive/SizeConfig.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/web-app/core/widgets/CustomButton.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/web-app/core/widgets/CustomButton.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/web-app/core/widgets/TextFieldContainer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/web-app/core/widgets/TextFieldContainer.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/web-app/core/widgets/custom-dropdown.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/web-app/core/widgets/custom-dropdown.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/web-app/core/widgets/dob-widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/web-app/core/widgets/dob-widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/web-app/features/HomePage/controller/homePage-Controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/web-app/features/HomePage/controller/homePage-Controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/web-app/features/HomePage/view/home-page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/web-app/features/HomePage/view/home-page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/web-app/features/HomePage/widgets/common-title-widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/web-app/features/HomePage/widgets/common-title-widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/web-app/features/HomePage/widgets/image-carousal-widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/web-app/features/HomePage/widgets/image-carousal-widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/web-app/features/main-web.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/web-app/features/main-web.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linux/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linux/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/generated_plugins.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/Flutter-Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/Flutter-Debug.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/Flutter-Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/Flutter-Release.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/generated_plugins.cmake" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2IuQoM7qE10GdgZG9bPp4Y7PFLo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/images" />
+    <property name="settings.editor.selected.configurable" value="flutter.settings" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/images" />
+      <recent name="$PROJECT_DIR$/assets/fonts" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c7abf001-1a76-4ce8-bad5-40d9baa95cbb" name="Changes" comment="" />
+      <created>1671029162691</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1671029162691</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$USER_HOME$/flutter/packages/flutter/lib/src/painting/edge_insets.dart</url>
+          <line>254</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint suspend="THREAD" type="dart-exception" />
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

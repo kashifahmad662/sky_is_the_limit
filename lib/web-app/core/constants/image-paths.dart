@@ -9,9 +9,13 @@ class ImagePath {
   static String image7 = "assets/images/image7.webp";
   static String image8 = "assets/images/image8.webp";
   static String image9 = "assets/images/image9.webp";
-  static String carousal1 = "assets/images/carousal1.jpeg";
-  static String carousal2 = "assets/images/carousal2.jpeg";
-  static String carousal3 = "assets/images/carousal3.jpeg";
-  static String carousal4 = "assets/images/carousal4.jpeg";
-  static String carousal5 = "assets/images/carousal5.jpeg";
+
+  static String carousal1 = "assets/images/carousal1.jpg";
+  static String carousal2 = "assets/images/carousal3.jpg";
+  static String carousal3 = "assets/images/carousal4.webp";
+  static String carousal4 = "assets/images/carousal5.jpg.webp";
+  static String carousal5 = "assets/images/carousal6.jpg";
+  static String carousal6 = "assets/images/carousal7.jpg";
+  static String footerBG = "assets/images/footer_bg.png";
+  static String founderImage = "assets/images/founder.jpeg";
 }
