@@ -14,10 +14,8 @@ import 'package:test/web-app/core/widgets/footer_ui.dart';
 import 'package:test/web-app/core/widgets/university_labels.dart';
 import 'package:test/web-app/core/widgets/why_turkey_ui.dart';
 import 'package:test/web-app/features/HomePage/controller/homePage-Controller.dart';
-import 'package:test/web-app/core/constants/extention.dart';
 
 import '../../../core/widgets/TextFieldContainer.dart';
-import '../../../core/widgets/dob-widget.dart';
 import '../widgets/common-title-widget.dart';
 import '../widgets/image-carousal-widget.dart';
 
@@ -557,7 +555,7 @@ class HomePage extends StatelessWidget {
                           : "Course Level",
                       listofItems: homeController.courseType,
                       onChanged: (value) {
-                        homeController.selectedCourseType.value = value!;
+                        homeController.selectedCourseType.value = value ?? '';
                       },
                       value: homeController.selectedCourseType.value == ""
                           ? null
@@ -617,7 +615,8 @@ class HomePage extends StatelessWidget {
                           'Email': homeController.emailController!.text,
                           'FullName': homeController.nameController!.text,
                           'Phone': homeController.phoneController!.text,
-                          'Program': homeController.programController!.text
+                          'Program': homeController.programController!.text,
+                          'status': 1
                         }).then((value) {
                           if (homeController.emailController?.text.isNotEmpty ==
                               true) {

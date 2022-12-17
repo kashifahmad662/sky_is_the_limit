@@ -173,9 +173,9 @@ class FooterUI extends StatelessWidget {
             ContactDetailsUI(
               onTap: () {
                 String query = Uri.encodeComponent(
-                    'APARTMAN D-11 KUMRULU SOK, ZAFER MAHALLESİ, Bahçelievler İstanbul Turkey');
+                    'KUMRULU Sokak N0:11, ZAFER MAHALLESİ, Bahçelievler İstanbul Turkey');
                 String googleUrl =
-                    "https://www.google.com/maps/search/?api=1&query=$query";
+                    "https://www.google.com/maps/search/?api=1&query=41.001650,28.831186";
 
                 launchUrl(Uri.parse(googleUrl));
               },
