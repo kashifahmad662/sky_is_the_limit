@@ -9,16 +9,19 @@ class ContactDetailsUI extends StatelessWidget {
       required this.title,
       this.onTap,
       this.subText,
-      this.onSeconderyTapped})
+      this.onSeconderyTapped,
+      this.onTrippleTap})
       : super(key: key);
   final String title;
   final VoidCallback? onTap;
   final VoidCallback? onSeconderyTapped;
+  final VoidCallback? onTrippleTap;
   final String? subText;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onDoubleTap: onTrippleTap,
       onTap: subText != null ? null : onTap,
       child: Container(
         color: Colors.transparent,

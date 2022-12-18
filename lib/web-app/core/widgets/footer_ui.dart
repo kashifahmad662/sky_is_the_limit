@@ -5,9 +5,13 @@ import 'package:test/web-app/core/constants/colors.dart';
 import 'package:test/web-app/core/constants/image-paths.dart';
 import 'package:test/web-app/core/constants/responsive_ui.dart';
 import 'package:test/web-app/core/responsive/SizeConfig.dart';
+import 'package:test/web-app/core/widgets/CustomButton.dart';
+import 'package:test/web-app/core/widgets/TextFieldContainer.dart';
 import 'package:test/web-app/core/widgets/contact_details_ui.dart';
 import 'package:test/web-app/core/widgets/line_widget.dart';
+import 'package:test/web-app/features/HomePage/view/admin_view.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:get/get.dart';
 
 class FooterUI extends StatelessWidget {
   const FooterUI({Key? key}) : super(key: key);
@@ -35,9 +39,18 @@ class FooterUI extends StatelessWidget {
               height: (ResponsiveWidget.isWebScreen ? 60 : 30) *
                   SizeConfig.heightMultiplier!,
             ),
-            Text(
-              'About Us',
-              style: AppTextStyle.titleWhite,
+            GestureDetector(
+              onDoubleTap: () {
+                showDialog(
+                    context: context,
+                    builder: (context) {
+                      return getInputForm(context, removeOffset: true);
+                    });
+              },
+              child: Text(
+                'About Us',
+                style: AppTextStyle.titleWhite,
+              ),
             ),
             SizedBox(
               height: (ResponsiveWidget.isWebScreen ? 20 : 15) *
@@ -45,19 +58,26 @@ class FooterUI extends StatelessWidget {
             ),
             const LineWidget(),
             SizedBox(
-              height: (ResponsiveWidget.isWebScreen ? 50 : 20) *
+              height: (ResponsiveWidget.isWebScreen ? 50 : 22) *
                   SizeConfig.heightMultiplier!,
             ),
             //website des
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
-                  "SKY\nIS THE\nLIMIT",
-                  style: AppTextStyle.neueHaasWhiteFont.copyWith(
-                      color: pureWhite,
-                      fontSize: (ResponsiveWidget.isWebScreen ? 50 : 20) *
-                          SizeConfig.textMultiplier!),
+                Theme(
+                  data: ThemeData(
+                    fontFamily: 'Montserrat',
+                    scaffoldBackgroundColor: pureWhite,
+                  ),
+                  child: Text(
+                    "SKY\nIS THE\nLIMIT",
+                    style: AppTextStyle.neueHaasWhiteFont.copyWith(
+                        color: pureWhite,
+                        fontWeight: FontWeight.w800,
+                        fontSize: (ResponsiveWidget.isWebScreen ? 50 : 20) *
+                            SizeConfig.textMultiplier!),
+                  ),
                 ),
                 SizedBox(
                   width: (ResponsiveWidget.isWebScreen ? 60 : 30) *
@@ -99,6 +119,7 @@ class FooterUI extends StatelessWidget {
                   SizeConfig.heightMultiplier!,
             ),
             ContactDetailsUI(
+              onTrippleTap: () {},
               title: 'admin@skyisthelimt.com',
               onTap: () {
                 final Uri emailLaunchUri = Uri(
@@ -187,6 +208,120 @@ class FooterUI extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Widget getInputForm(BuildContext context, {bool? removeOffset}) {
+    TextEditingController username = TextEditingController();
+    TextEditingController password = TextEditingController();
+    return Align(
+      alignment:
+          ResponsiveWidget.isMobile ? Alignment.center : Alignment.topRight,
+      child: GestureDetector(
+        onTap: () {
+          FocusManager.instance.primaryFocus?.unfocus();
+        },
+        child: Material(
+          borderRadius: BorderRadius.circular(10),
+          elevation: 20,
+          child: Container(
+            height: null,
+            padding: const EdgeInsets.all(25),
+            width: Get.width < 500
+                ? 300 * SizeConfig.widthMultiplier!
+                : 450 * SizeConfig.widthMultiplier!,
+            decoration: BoxDecoration(
+              color: pureWhite,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  TextFieldContainer(
+                    wantLabel: true,
+                    label: "Username",
+                    hint: 'Username',
+                    isObsecure: false,
+                    onChanged: () {},
+                    suffixWidget: const SizedBox(),
+                    textEditingController: username,
+                    textInputType: TextInputType.text,
+                    subLabel: '',
+                    width: ResponsiveWidget.isWebScreen
+                        ? 300 * SizeConfig.widthMultiplier!
+                        : null,
+                  ),
+                  getSizedBox(),
+                  TextFieldContainer(
+                    wantLabel: true,
+                    label: "Password",
+                    hint: 'password',
+                    isObsecure: true,
+                    onChanged: () {},
+                    suffixWidget: SizedBox(),
+                    textEditingController: password,
+                    textInputType: TextInputType.text,
+                    subLabel: '',
+                    width: ResponsiveWidget.isWebScreen
+                        ? 300 * SizeConfig.widthMultiplier!
+                        : null,
+                  ),
+                  SizedBox(
+                    height: 40 * SizeConfig.heightMultiplier!,
+                  ),
+                  SizedBox(
+                    width: ResponsiveWidget.isWebScreen
+                        ? 120 * SizeConfig.widthMultiplier!
+                        : double.infinity,
+                    height: ResponsiveWidget.isWebScreen
+                        ? null
+                        : 40 * SizeConfig.heightMultiplier!,
+                    child: CustomButton(
+                      text: 'Login',
+                      buttonColor: Colors.red,
+                      onPressed: () async {
+                        if (checkAdminLogin(username.text, password.text)) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => UserInformation()));
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text("Invalid Credentials!")));
+                        }
+                      },
+                      textStyle:
+                          AppTextStyle.paleText.copyWith(color: pureWhite),
+                      //width: 20 * SizeConfig.widthMultiplier!,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20 * SizeConfig.heightMultiplier!,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget getSizedBox() {
+    return SizedBox(
+      height: (ResponsiveWidget.isWebScreen ? 20 : 10) *
+          SizeConfig.heightMultiplier!,
+    );
+  }
+
+  bool checkAdminLogin(String user, String pass) {
+    if (user == 'admin@skyisthelimt.com' && pass == "Check@123#") {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
 

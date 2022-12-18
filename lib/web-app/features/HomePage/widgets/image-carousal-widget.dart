@@ -7,12 +7,13 @@ import 'package:test/web-app/core/constants/image-paths.dart';
 class ImageCarousalWidget extends StatelessWidget {
   const ImageCarousalWidget({super.key});
   static final List<String> imgList = [
-    ImagePath.carousal1,
     ImagePath.carousal2,
     ImagePath.carousal3,
     ImagePath.carousal4,
+    ImagePath.carousal1,
     ImagePath.carousal5,
-    ImagePath.carousal6
+    ImagePath.carousal6,
+    ImagePath.carousal7,
   ];
 
   @override

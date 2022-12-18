@@ -33,6 +33,7 @@ class AppTextStyle {
   static TextStyle neueHaasWhiteFont = TextStyle(
     fontSize: 15 * SizeConfig.textMultiplier!,
     fontWeight: FontWeight.w800,
+    fontFamily: 'Montserrat',
     color: pureWhite,
   );
 

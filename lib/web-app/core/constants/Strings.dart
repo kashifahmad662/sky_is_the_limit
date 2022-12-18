@@ -5,11 +5,12 @@ class Strings {
   static const String title2 = "World-Class Education System";
   static const String title3 = 'Multicultural Environment';
   static const String title4 = 'High Quality Of Life';
-  static const String title5 = 'Research And Innovation';
-  static const String title6 =
-      "Study At A Top-Ranked Turkey University – University In Turkey ";
-  static const String title7 = 'English As A Medium Of Instruction';
-  static const String title8 = 'Transportation Is Convenient And Cheap';
+  static const String title5 =
+      'Study At A Top-Ranked Turkey University – University In Turkey ';
+  static const String title6 = "English As A Medium Of Instruction";
+  static const String title7 =
+      'Ielts Or Toefl Exams Are Not Required For The Admission Process';
+  static const String title8 = 'Living Expenses Are Low';
   static const String title9 =
       'Ielts Or Toefl Exams Are Not Required For The Admission Process';
   static const String title10 =
@@ -35,13 +36,13 @@ class Strings {
   static const String subtitle4 =
       'The cost of living in Turkey is relatively low compared to other European countries, so you can make your money go further while enjoying a high quality of life while studying abroad. If you want to take advantage of all that Turkey offers but don’t want to break the bank, studying in Turkey is a great choice!';
   static const String subtitle5 =
-      'Turkey is at the forefront of research and innovation. The country was ranked 7th in scientific output among OECD countries, with a record number of scientists, engineers, and technicians per capita. In addition to ranking first in Europe for producing the most science, technology, and engineering graduates per year, Turkey has the highest number of newly-registered patent applications in the European Union. This means there are many opportunities for innovative research projects, which can be worked on during an undergraduate or postgraduate degree.';
-  static const String subtitle6 =
       'Many top-ranked Turkish universities offer high-quality education in an international environment with affordable tuition fees and living costs. These include Istanbul Technical University (ITU), Bogazici University, Sabanci University, Middle East Technical University (METU), Bilkent University, and Yildiz Technical University (YTU).';
+  static const String subtitle6 =
+      'English language proficiency is fundamental to studying abroad, as only 32% of students who cannot speak English are satisfied with their academic experience compared to 83% of students who are proficient in English (2). Many courses study in Turkey in English at both undergraduate and postgraduate levels. This means it is an excellent destination for international students who may not be proficient in Turkish or want to learn it.';
   static const String subtitle7 =
-      'English language proficiency is fundamental to studying abroad, as only 32% of students who cannot speak English are satisfied with their academic experience compared to 83% of students who are proficient in English (2). Many courses study in Turkey in English at both undergraduate and postgraduate levels. This means it is an excellent destination for international students who may not be proficient in Turkish or want to learn it.\nStudents can find courses in Turkey taught in English across all disciplines, including engineering, sciences, humanities, art and design, and business. International universities offer many exchange programs that allow students to study at a Turkish university for 1-2 semesters.';
+      'Unlike the US or UK, most of the universities in Turkey do not require language exam results like IELTS or TOEFL from their international students before accepting their applications. However, it is recommended that you should have at least intermediate English knowledge since during the application process.';
   static const String subtitle8 =
-      'Whether you are a student or not, Turkey has a very convenient transportation system. It is easy to get around the cities by public transportation. Buses, subways, taxis,s, and trains are available in all major cities of Turkey. Its biggest city Istanbul has an underground train system similar to London and Paris. Ankara, the capital of Turkey, also offers a subway system currently under development and will be completed soon. Besides, there are plenty of buses in both cities to take you anywhere you want.';
+      'Living in Turkey is very cheap, especially if you compare the price to other European countries and the United States. The cost of living is one of the most important factors when choosing a study abroad destination, and Turkey can be a perfect option if you want to save money.';
   static const String subtitle9 =
       'Unlike the US or UK, most of the universities in Turkey do not require language exam results like IELTS or TOEFL from their international students before accepting their applications. However, it is recommended that you should have at least intermediate English knowledge since during the application process.';
   static const String subtitle10 =

@@ -14,6 +14,7 @@ import 'package:test/web-app/core/widgets/footer_ui.dart';
 import 'package:test/web-app/core/widgets/university_labels.dart';
 import 'package:test/web-app/core/widgets/why_turkey_ui.dart';
 import 'package:test/web-app/features/HomePage/controller/homePage-Controller.dart';
+import 'package:test/web-app/features/HomePage/view/admin_view.dart';
 
 import '../../../core/widgets/TextFieldContainer.dart';
 import '../widgets/common-title-widget.dart';
@@ -73,12 +74,21 @@ class HomePage extends StatelessWidget {
                             left: 10,
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                "SKY\nIS THE\nLIMIT",
-                                style: AppTextStyle.neueHaasWhiteFont.copyWith(
-                                    color: pureWhite,
-                                    fontSize: (Get.width > 600 ? 50 : 20) *
-                                        SizeConfig.textMultiplier!),
+                              child: Theme(
+                                data: ThemeData(
+                                  fontFamily: 'Montserrat',
+                                  scaffoldBackgroundColor: pureWhite,
+                                ),
+                                child: Text(
+                                  "SKY\nIS THE\nLIMIT",
+                                  style: AppTextStyle.neueHaasWhiteFont
+                                      .copyWith(
+                                          color: pureWhite,
+                                          fontWeight: FontWeight.w800,
+                                          fontSize:
+                                              (Get.width > 600 ? 50 : 22) *
+                                                  SizeConfig.textMultiplier!),
+                                ),
                               ),
                             ),
                           ),
@@ -116,6 +126,89 @@ class HomePage extends StatelessWidget {
                             SizeConfig.heightMultiplier!,
                         child: const UniversityLabelCards(),
                       ),
+                      if (ResponsiveWidget.isMobile)
+                        Transform.translate(
+                          offset: Offset(0, -20 * SizeConfig.heightMultiplier!),
+                          child: Container(
+                            margin: EdgeInsets.only(
+                                left: 20 * SizeConfig.widthMultiplier!,
+                                right: 20 * SizeConfig.widthMultiplier!,
+                                bottom: 20 * SizeConfig.heightMultiplier!),
+                            child: Card(
+                              elevation: 5,
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal:
+                                        20 * SizeConfig.widthMultiplier!,
+                                    vertical:
+                                        10 * SizeConfig.heightMultiplier!),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(
+                                      height: 10 * SizeConfig.heightMultiplier!,
+                                    ),
+                                    Text(
+                                      'Get free consultancy',
+                                      style: AppTextStyle.titleStyle,
+                                    ),
+                                    SizedBox(
+                                      height: (ResponsiveWidget.isWebScreen
+                                              ? 30
+                                              : 20) *
+                                          SizeConfig.heightMultiplier!,
+                                    ),
+                                    Text(
+                                      'Tomorrow’s leaders are today’s students. To help these young minds flourish in their chosen field of study, we have prepared a team of consultants to help them choose the path to their dreams.',
+                                      style: AppTextStyle.subtitleStyle,
+                                    ),
+                                    SizedBox(
+                                      height: (ResponsiveWidget.isWebScreen
+                                              ? 30
+                                              : 20) *
+                                          SizeConfig.heightMultiplier!,
+                                    ),
+                                    GestureDetector(
+                                      onTap: () {
+                                        showDialog(
+                                            context: context,
+                                            builder: (context) {
+                                              return getInputForm(context,
+                                                  removeOffset: true);
+                                            });
+                                      },
+                                      child: Card(
+                                        color: Colors.red.shade600
+                                            .withOpacity(0.9),
+                                        child: SizedBox(
+                                          width: double.infinity,
+                                          child: Padding(
+                                            padding: EdgeInsets.symmetric(
+                                                vertical: 10 *
+                                                    SizeConfig
+                                                        .heightMultiplier!),
+                                            child: Center(
+                                              child: Text(
+                                                "Apply Now",
+                                                style: AppTextStyle
+                                                    .boldTTWhite16
+                                                    .copyWith(
+                                                        color: Colors.white
+                                                            .withOpacity(0.9),
+                                                        fontSize: 12),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
                       Padding(
                         padding: EdgeInsets.symmetric(
                             horizontal:
@@ -151,29 +244,28 @@ class HomePage extends StatelessWidget {
                             ),
 
                             // //5
-                            // CommonTextWidget(
-                            //   title: Strings.title5,
-                            //   wantImage: true,
-                            //   image: ImagePath.image3,
-                            //   subtitle: Strings.subtitle5,
-                            // ),
-                            // //6
-                            // CommonTextWidget(
-                            //   title: Strings.title6,
-                            //   subtitle: Strings.subtitle6,
-                            // ),
-                            // //7
-                            // CommonTextWidget(
-                            //   title: Strings.title7,
-                            //   subtitle: Strings.subtitle7,
-                            //   wantImage: true,
-                            //   image: ImagePath.image4,
-                            // ),
-                            // //8
-                            // CommonTextWidget(
-                            //   title: Strings.title8,
-                            //   subtitle: Strings.subtitle8,
-                            // ),
+                            CommonTextWidget(
+                              title: Strings.title5,
+                              subtitle: Strings.subtitle5,
+                              secondImagePath: ImagePath.image10,
+                              wantFlag: true,
+                            ),
+                            //6
+                            CommonTextWidget(
+                              title: Strings.title6,
+                              subtitle: Strings.subtitle6,
+                            ),
+                            //7
+                            CommonTextWidget(
+                              wantFlag: true,
+                              title: Strings.title7,
+                              subtitle: Strings.subtitle7,
+                            ),
+                            //8
+                            CommonTextWidget(
+                              title: Strings.title8,
+                              subtitle: Strings.subtitle8,
+                            ),
                             // //9
                             // CommonTextWidget(
                             //   title: Strings.title9,
@@ -354,71 +446,7 @@ class HomePage extends StatelessWidget {
           ),
           CompositedTransformFollower(
             link: _fieldLink,
-            child: (Get.width > 500)
-                ? getInputForm(context)
-                : Align(
-                    alignment: Alignment.topRight,
-                    child: Transform.translate(
-                      offset: Offset(-10 * SizeConfig.widthMultiplier!,
-                          125 * SizeConfig.heightMultiplier!),
-                      child: SizedBox(
-                        width: 100 * SizeConfig.widthMultiplier!,
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            SizedBox(
-                              height: 10 * SizeConfig.heightMultiplier!,
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(
-                                  left: 4 * SizeConfig.widthMultiplier!),
-                              child: Text(
-                                "Learn Today,\nLead Tomorrow.",
-                                style: AppTextStyle.boldTTWhite16.copyWith(
-                                  fontSize: 16,
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              height: 10 * SizeConfig.heightMultiplier!,
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                showDialog(
-                                    context: context,
-                                    builder: (context) {
-                                      return getInputForm(context,
-                                          removeOffset: true);
-                                    });
-                              },
-                              child: Card(
-                                color: Colors.red.shade600.withOpacity(0.9),
-                                child: SizedBox(
-                                  width: double.infinity,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        vertical:
-                                            7 * SizeConfig.heightMultiplier!),
-                                    child: Center(
-                                      child: Text(
-                                        "Contact Us",
-                                        style: AppTextStyle.boldTTWhite16
-                                            .copyWith(
-                                                color: Colors.white
-                                                    .withOpacity(0.9),
-                                                fontSize: 12),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
+            child: (Get.width > 500) ? getInputForm(context) : Container(),
           ),
         ],
       ),
@@ -433,211 +461,244 @@ class HomePage extends StatelessWidget {
         offset: removeOffset == true
             ? Offset(0, 0)
             : Offset(-Get.width * 0.04, Get.height * 0.23),
-        child: Material(
-          borderRadius: BorderRadius.circular(10),
-          elevation: 20,
-          child: Container(
-            height: ResponsiveWidget.isMobile
-                ? 500 * SizeConfig.heightMultiplier!
-                : null,
-            padding: const EdgeInsets.all(25),
-            width: Get.width < 500
-                ? 300 * SizeConfig.widthMultiplier!
-                : 450 * SizeConfig.widthMultiplier!,
-            decoration: BoxDecoration(
-              color: pureWhite,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: SingleChildScrollView(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  CustomDropDown(
-                    color: Colors.transparent,
-                    hint: "heel",
-                    labelText: "Country",
-                    listofItems: const ["Turkey"],
-                    onChanged: null,
-                    value: "Turkey",
-                    width: ResponsiveWidget.isWebScreen
-                        ? 300 * SizeConfig.widthMultiplier!
-                        : null,
-                  ),
-                  getSizedBox(),
-                  TextFieldContainer(
-                    wantLabel: true,
-                    label: "Name",
-                    hint: 'Enter Full Name',
-                    isObsecure: false,
-                    onChanged: () {},
-                    suffixWidget: const SizedBox(),
-                    textEditingController: homeController.nameController!,
-                    textInputType: TextInputType.text,
-                    subLabel: 'your full name',
-                    width: ResponsiveWidget.isWebScreen
-                        ? 300 * SizeConfig.widthMultiplier!
-                        : null,
-                  ),
-                  getSizedBox(),
-                  Obx(
-                    () {
-                      homeController.dobController?.text =
-                          homeController.formDOB.value.isAfter(
-                                  DateTime.now().subtract(Duration(hours: 10)))
-                              ? ''
-                              : DateFormat("dd/MM/yyyy")
-                                  .format(homeController.formDOB.value);
-                      return GestureDetector(
-                        onTap: () {
-                          _selectDate(context);
-                          print(homeController.formDOB.value.toString());
-                        },
-                        child: TextFieldContainer(
-                          wantLabel: true,
-                          isDisabled: true,
-                          width: ResponsiveWidget.isWebScreen
-                              ? 300 * SizeConfig.widthMultiplier!
-                              : null,
-                          label: "Date Birth",
-                          textEditingController: homeController.dobController!,
-                          hint: '11/11/2022',
-                          isObsecure: false,
-                          onChanged: () {},
-                          suffixWidget: null,
-                          textInputType: TextInputType.text,
-                          subLabel: '',
-                        ),
-                      );
-                    },
-                  ),
-                  getSizedBox(),
-                  TextFieldContainer(
-                    wantLabel: true,
-                    label: "Email",
-                    hint: 'Enter Email',
-                    isObsecure: false,
-                    onChanged: () {},
-                    suffixWidget: Icon(Icons.email_rounded),
-                    textEditingController: homeController.emailController!,
-                    textInputType: TextInputType.text,
-                    subLabel: 'a valid email',
-                    width: ResponsiveWidget.isWebScreen
-                        ? 300 * SizeConfig.widthMultiplier!
-                        : null,
-                  ),
-                  getSizedBox(),
-                  TextFieldContainer(
-                    wantLabel: true,
-                    label: "Phone",
-                    hint: 'Enter Phone',
-                    isObsecure: false,
-                    onChanged: () {},
-                    suffixWidget: const SizedBox(),
-                    textEditingController: homeController.phoneController!,
-                    textInputType: TextInputType.text,
-                    subLabel: 'with country\ncode',
-                    width: ResponsiveWidget.isWebScreen
-                        ? 300 * SizeConfig.widthMultiplier!
-                        : null,
-                  ),
-                  getSizedBox(),
-                  Obx(
-                    () => CustomDropDown(
-                      color: pale,
+        child: GestureDetector(
+          onTap: () {
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
+          child: Material(
+            borderRadius: BorderRadius.circular(10),
+            elevation: 20,
+            child: Container(
+              height: ResponsiveWidget.isMobile
+                  ? 500 * SizeConfig.heightMultiplier!
+                  : null,
+              padding: const EdgeInsets.all(25),
+              width: Get.width < 500
+                  ? 300 * SizeConfig.widthMultiplier!
+                  : 450 * SizeConfig.widthMultiplier!,
+              decoration: BoxDecoration(
+                color: pureWhite,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    CustomDropDown(
+                      color: Colors.transparent,
+                      hint: "heel",
+                      labelText: "Country",
+                      listofItems: const ["Turkey"],
+                      onChanged: null,
+                      value: "Turkey",
                       width: ResponsiveWidget.isWebScreen
                           ? 300 * SizeConfig.widthMultiplier!
                           : null,
-                      hint: "Bachelor's, Master's",
-                      labelText: ResponsiveWidget.isWebScreen
-                          ? "Course\n Level"
-                          : "Course Level",
-                      listofItems: homeController.courseType,
-                      onChanged: (value) {
-                        homeController.selectedCourseType.value = value ?? '';
+                    ),
+                    getSizedBox(),
+                    TextFieldContainer(
+                      wantLabel: true,
+                      label: "Name",
+                      hint: 'Enter Full Name',
+                      isObsecure: false,
+                      onChanged: () {},
+                      suffixWidget: const SizedBox(),
+                      textEditingController: homeController.nameController!,
+                      textInputType: TextInputType.text,
+                      subLabel: 'your full name',
+                      width: ResponsiveWidget.isWebScreen
+                          ? 300 * SizeConfig.widthMultiplier!
+                          : null,
+                    ),
+                    getSizedBox(),
+                    Obx(
+                      () {
+                        homeController.dobController
+                            ?.text = homeController.formDOB.value.isAfter(
+                                DateTime.now().subtract(Duration(hours: 10)))
+                            ? ''
+                            : DateFormat("dd/MM/yyyy")
+                                .format(homeController.formDOB.value);
+                        return GestureDetector(
+                          onTap: () {
+                            _selectDate(context);
+                            print(homeController.formDOB.value.toString());
+                          },
+                          child: TextFieldContainer(
+                            wantLabel: true,
+                            isDisabled: true,
+                            width: ResponsiveWidget.isWebScreen
+                                ? 300 * SizeConfig.widthMultiplier!
+                                : null,
+                            label: "Date Birth",
+                            textEditingController:
+                                homeController.dobController!,
+                            hint: '11/11/2022',
+                            isObsecure: false,
+                            onChanged: () {},
+                            suffixWidget: null,
+                            textInputType: TextInputType.text,
+                            subLabel: '',
+                          ),
+                        );
                       },
-                      value: homeController.selectedCourseType.value == ""
+                    ),
+                    getSizedBox(),
+                    TextFieldContainer(
+                      wantLabel: true,
+                      label: "Email",
+                      hint: 'Enter Email',
+                      isObsecure: false,
+                      onChanged: () {},
+                      suffixWidget: Icon(Icons.email_rounded),
+                      textEditingController: homeController.emailController!,
+                      textInputType: TextInputType.text,
+                      subLabel: 'a valid email',
+                      width: ResponsiveWidget.isWebScreen
+                          ? 300 * SizeConfig.widthMultiplier!
+                          : null,
+                    ),
+                    getSizedBox(),
+                    TextFieldContainer(
+                      wantLabel: true,
+                      label: "Phone",
+                      hint: 'Enter Phone',
+                      isObsecure: false,
+                      onChanged: () {},
+                      suffixWidget: const SizedBox(),
+                      textEditingController: homeController.phoneController!,
+                      textInputType: TextInputType.text,
+                      subLabel: 'with country\ncode',
+                      width: ResponsiveWidget.isWebScreen
+                          ? 300 * SizeConfig.widthMultiplier!
+                          : null,
+                    ),
+                    getSizedBox(),
+                    Obx(
+                      () => CustomDropDown(
+                        color: pale,
+                        width: ResponsiveWidget.isWebScreen
+                            ? 300 * SizeConfig.widthMultiplier!
+                            : null,
+                        hint: "Bachelor's, Master's",
+                        labelText: ResponsiveWidget.isWebScreen
+                            ? "Course\n Level"
+                            : "Course Level",
+                        listofItems: homeController.courseType,
+                        onChanged: (value) {
+                          homeController.selectedCourseType.value = value ?? '';
+                        },
+                        value: homeController.selectedCourseType.value == ""
+                            ? null
+                            : homeController.selectedCourseType.value,
+                      ),
+                    ),
+                    getSizedBox(),
+                    TextFieldContainer(
+                      wantLabel: true,
+                      label: "Program",
+                      hint: 'Eg:- Accounting, Finance & Economics',
+                      optional: true,
+                      isObsecure: false,
+                      onChanged: () {},
+                      suffixWidget: const SizedBox(),
+                      textEditingController: homeController.programController!,
+                      textInputType: TextInputType.text,
+                      subLabel: 'interested',
+                      width: ResponsiveWidget.isWebScreen
+                          ? 300 * SizeConfig.widthMultiplier!
+                          : null,
+                    ),
+                    getSizedBox(),
+                    LargeTextField(
+                      wantCenterAlignment: false,
+                      label: 'Comments',
+                      wantLabel: true,
+                      textEditingController: homeController.commentController!,
+                      onChanged: () {},
+                      subLabel: "Questions",
+                      hint: 'Enter comments',
+                      width: ResponsiveWidget.isWebScreen
+                          ? 300 * SizeConfig.widthMultiplier!
+                          : null,
+                    ),
+                    SizedBox(
+                      height: 40 * SizeConfig.heightMultiplier!,
+                    ),
+                    SizedBox(
+                      width: ResponsiveWidget.isWebScreen
+                          ? 120 * SizeConfig.widthMultiplier!
+                          : double.infinity,
+                      height: ResponsiveWidget.isWebScreen
                           ? null
-                          : homeController.selectedCourseType.value,
-                    ),
-                  ),
-                  getSizedBox(),
-                  TextFieldContainer(
-                    wantLabel: true,
-                    label: "Program",
-                    hint: 'Eg:- Accounting, Finance & Economics',
-                    optional: true,
-                    isObsecure: false,
-                    onChanged: () {},
-                    suffixWidget: const SizedBox(),
-                    textEditingController: homeController.programController!,
-                    textInputType: TextInputType.text,
-                    subLabel: 'interested',
-                    width: ResponsiveWidget.isWebScreen
-                        ? 300 * SizeConfig.widthMultiplier!
-                        : null,
-                  ),
-                  getSizedBox(),
-                  LargeTextField(
-                    wantCenterAlignment: false,
-                    label: 'Comments',
-                    wantLabel: true,
-                    textEditingController: homeController.commentController!,
-                    onChanged: () {},
-                    subLabel: "Questions",
-                    hint: 'Enter comments',
-                    width: ResponsiveWidget.isWebScreen
-                        ? 300 * SizeConfig.widthMultiplier!
-                        : null,
-                  ),
-                  SizedBox(
-                    height: 40 * SizeConfig.heightMultiplier!,
-                  ),
-                  SizedBox(
-                    width: ResponsiveWidget.isWebScreen
-                        ? 120 * SizeConfig.widthMultiplier!
-                        : double.infinity,
-                    height: ResponsiveWidget.isWebScreen
-                        ? null
-                        : 40 * SizeConfig.heightMultiplier!,
-                    child: CustomButton(
-                      text: 'Submit Form',
-                      buttonColor: Colors.red,
-                      onPressed: () async {
-                        await users.add({
-                          'country': 'turkey',
-                          'Comments': homeController.commentController!.text,
-                          'CourseLevel':
-                              homeController.selectedCourseType.value,
-                          'DateOfBirth': DateFormat('dd/MM/yyyy')
-                              .format(homeController.formDOB.value),
-                          'Email': homeController.emailController!.text,
-                          'FullName': homeController.nameController!.text,
-                          'Phone': homeController.phoneController!.text,
-                          'Program': homeController.programController!.text,
-                          'status': 1
-                        }).then((value) {
-                          if (homeController.emailController?.text.isNotEmpty ==
-                              true) {
-                            registeredEmails.add({
-                              "email": homeController.emailController!.text
-                            });
+                          : 40 * SizeConfig.heightMultiplier!,
+                      child: CustomButton(
+                        text: 'Submit Form',
+                        buttonColor: Colors.red,
+                        onPressed: () async {
+                          await users.add({
+                            'country': 'turkey',
+                            'Comments': homeController.commentController!.text,
+                            'CourseLevel':
+                                homeController.selectedCourseType.value,
+                            'DateOfBirth': DateFormat('dd/MM/yyyy')
+                                .format(homeController.formDOB.value),
+                            'Email': homeController.emailController!.text,
+                            'FullName': homeController.nameController!.text,
+                            'Phone': homeController.phoneController!.text,
+                            'Program': homeController.programController!.text,
+                            'status': 1
+                          }).then((value) {
+                            if (homeController
+                                    .emailController?.text.isNotEmpty ==
+                                true) {
+                              registeredEmails.add({
+                                "email": homeController.emailController!.text
+                              });
+                            }
+                            homeController.clearControllerValues();
+                          });
+                          if (ResponsiveWidget.isMobile) {
+                            Navigator.pop(context);
                           }
-                          homeController.clearControllerValues();
-                        });
-                        if (ResponsiveWidget.isMobile) {
-                          Navigator.pop(context);
-                        }
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                            content: Text("Form submitted Successfully.")));
-                      },
-                      textStyle:
-                          AppTextStyle.paleText.copyWith(color: pureWhite),
-                      //width: 20 * SizeConfig.widthMultiplier!,
-                    ),
-                  )
-                ],
+                          showDialog(
+                              context: context,
+                              builder: (context) {
+                                return AlertDialog(
+                                  content: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      const Icon(
+                                        Icons.watch_later_rounded,
+                                        color: Colors.red,
+                                        size: 50,
+                                      ),
+                                      SizedBox(
+                                        height: (ResponsiveWidget.isWebScreen
+                                                ? 40
+                                                : 20) *
+                                            SizeConfig.heightMultiplier!,
+                                      ),
+                                      SizedBox(
+                                        width:
+                                            300 * SizeConfig.widthMultiplier!,
+                                        child: const Text(
+                                            'Thank You for registering for Study-in turkey (skyisthelimit) free consultancy Your journey towards a successful education abroad has begun so leverage the most out of it.You will receive a call or message from one of our counsellors shortly with all the details.'),
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              });
+                        },
+                        textStyle:
+                            AppTextStyle.paleText.copyWith(color: pureWhite),
+                        //width: 20 * SizeConfig.widthMultiplier!,
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
           ),

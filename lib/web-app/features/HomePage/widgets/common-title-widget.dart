@@ -12,6 +12,8 @@ class CommonTextWidget extends StatelessWidget {
     required this.subtitle,
     this.image,
     this.wantImage = false,
+    this.wantFlag,
+    this.secondImagePath,
     Key? key,
   }) : super(key: key);
 
@@ -19,6 +21,8 @@ class CommonTextWidget extends StatelessWidget {
   String? subtitle;
   String? image;
   bool wantImage;
+  bool? wantFlag;
+  String? secondImagePath;
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +48,12 @@ class CommonTextWidget extends StatelessWidget {
             height: 20 * SizeConfig.heightMultiplier!,
           ),
           Text(subtitle.toString(), style: AppTextStyle.lightLabelStyle),
+          SizedBox(
+            height: 20 * SizeConfig.heightMultiplier!,
+          ),
+          if (wantFlag == true)
+            Image.network(
+                secondImagePath ?? 'assets/images/India-Turkey-flags.jpg')
         ],
       ),
     );

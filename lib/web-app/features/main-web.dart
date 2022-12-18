@@ -29,9 +29,9 @@ class WebApp extends StatelessWidget {
                 return GetMaterialApp(
                   title: 'Sky is the limit',
                   theme: ThemeData(
-                      fontFamily: 'Roboto',
-                      scaffoldBackgroundColor: pureWhite,
-                      visualDensity: VisualDensity.adaptivePlatformDensity),
+                    fontFamily: 'Roboto',
+                    scaffoldBackgroundColor: pureWhite,
+                  ),
                   //   onGenerateRoute: GenerateRoute.generateRoute,
                   home: HomePage(),
                 );

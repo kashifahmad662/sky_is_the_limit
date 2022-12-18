@@ -64,17 +64,17 @@ class CustomDropDown extends StatelessWidget {
                       ),
                       borderRadius: BorderRadius.circular(5)),
                   child: DropdownButton2(
-                    selectedItemBuilder: (context) {
-                      return [
-                        Text(
-                          value ?? '',
-                          style: AppTextStyle.regularBlack62Text.copyWith(
-                              fontSize: ResponsiveWidget.isWebScreen
-                                  ? 18 * SizeConfig.textMultiplier!
-                                  : 14 * SizeConfig.textMultiplier!),
-                        )
-                      ];
-                    },
+                    // selectedItemBuilder: (context) {
+                    //   return [
+                    //     Text(
+                    //       value ?? '',
+                    //       style: AppTextStyle.regularBlack62Text.copyWith(
+                    //           fontSize: ResponsiveWidget.isWebScreen
+                    //               ? 18 * SizeConfig.textMultiplier!
+                    //               : 14 * SizeConfig.textMultiplier!),
+                    //     )
+                    //   ];
+                    // },
                     isDense: true,
                     style: AppTextStyle.regularBlack62Text.copyWith(
                         fontSize: ResponsiveWidget.isWebScreen
@@ -102,8 +102,15 @@ class CustomDropDown extends StatelessWidget {
                                 children: [
                                   Text(
                                     item,
-                                    style: AppTextStyle.regularBlack62Text,
-                                    overflow: TextOverflow.ellipsis,
+                                    style: AppTextStyle.regularBlack62Text
+                                        .copyWith(
+                                            color: Color(0xff333333),
+                                            fontSize: ResponsiveWidget
+                                                    .isWebScreen
+                                                ? 18 *
+                                                    SizeConfig.textMultiplier!
+                                                : 14 *
+                                                    SizeConfig.textMultiplier!),
                                   ),
                                 ],
                               ),
@@ -140,7 +147,6 @@ class CustomDropDown extends StatelessWidget {
                     scrollbarRadius: const Radius.circular(40),
                     scrollbarThickness: 6,
                     scrollbarAlwaysShow: true,
-                    offset: const Offset(0, 0),
                   ),
                 ),
               ))
