@@ -1,7 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:test/web-app/features/HomePage/view/home-page.dart';
-import 'package:test/web-app/features/main-web.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+
+import 'web-app/core/constants/colors.dart';
+import 'web-app/core/responsive/SizeConfig.dart';
 
 void main() async {
   // //Initializing Database when starting the application.
@@ -14,21 +18,42 @@ void main() async {
       projectId: "sky-is-the-limit-7208a",
     ),
   );
+
   runApp(const WebApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class WebApp extends StatelessWidget {
+  const WebApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Sky is The Limit',
-      theme: ThemeData(
-        primarySwatch: Colors.red,
-      ),
-      home: HomePage(),
-    );
+    Size size = MediaQuery.of(context).size;
+    // Size size = Get.size;
+    return ScreenUtilInit(
+        designSize: size.width < 500
+            ? const Size(350, 720)
+            : size.width > 500 && size.width < 1000
+                ? const Size(500, 800)
+                : const Size(1440, 950),
+        minTextAdapt: true,
+        builder: (context, snapshot) {
+          return LayoutBuilder(
+            builder: (context, constraints) {
+              return OrientationBuilder(builder: (context, orientation) {
+                SizeConfig().init(constraints, orientation);
+                return GetMaterialApp(
+                  title: 'Sky is the limit',
+                  debugShowCheckedModeBanner: false,
+                  theme: ThemeData(
+                    fontFamily: 'Roboto',
+                    scaffoldBackgroundColor: pureWhite,
+                  ),
+                  // onGenerateRoute: GenerateRoute.generateRoute,
+                  home: HomePage(),
+                );
+              });
+            },
+          );
+        });
   }
 }

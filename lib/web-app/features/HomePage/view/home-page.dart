@@ -14,14 +14,13 @@ import 'package:test/web-app/core/widgets/footer_ui.dart';
 import 'package:test/web-app/core/widgets/university_labels.dart';
 import 'package:test/web-app/core/widgets/why_turkey_ui.dart';
 import 'package:test/web-app/features/HomePage/controller/homePage-Controller.dart';
-import 'package:test/web-app/features/HomePage/view/admin_view.dart';
 
 import '../../../core/widgets/TextFieldContainer.dart';
 import '../widgets/common-title-widget.dart';
 import '../widgets/image-carousal-widget.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({Key? key}) : super(key: key);
+   HomePage({super.key});
 
   final HomeController homeController = Get.put(HomeController());
 
@@ -48,6 +47,19 @@ class HomePage extends StatelessWidget {
     homeController.clearControllerValues();
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: Text(
+          "SKY IS THE LIMIT",
+          style: AppTextStyle.neueHaasWhiteFont.copyWith(
+              color: pale,
+              fontWeight: FontWeight.w800,
+              fontSize:
+                  (Get.width > 600 ? 30 : 22) * SizeConfig.textMultiplier!),
+        ),
+        actions: [
+          
+        ],
+      ),
       body: Stack(
         children: [
           Align(
@@ -69,29 +81,29 @@ class HomePage extends StatelessWidget {
                             width: Get.width,
                             child: const ImageCarousalWidget(),
                           ),
-                          Positioned(
-                            top: 10,
-                            left: 10,
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Theme(
-                                data: ThemeData(
-                                  fontFamily: 'Montserrat',
-                                  scaffoldBackgroundColor: pureWhite,
-                                ),
-                                child: Text(
-                                  "SKY\nIS THE\nLIMIT",
-                                  style: AppTextStyle.neueHaasWhiteFont
-                                      .copyWith(
-                                          color: pureWhite,
-                                          fontWeight: FontWeight.w800,
-                                          fontSize:
-                                              (Get.width > 600 ? 50 : 22) *
-                                                  SizeConfig.textMultiplier!),
-                                ),
-                              ),
-                            ),
-                          ),
+                          // Positioned(
+                          //   top: 10,
+                          //   left: 10,
+                          //   child: Padding(
+                          //     padding: const EdgeInsets.all(8.0),
+                          //     child: Theme(
+                          //       data: ThemeData(
+                          //         fontFamily: 'Montserrat',
+                          //         scaffoldBackgroundColor: pureWhite,
+                          //       ),
+                          //       child: Text(
+                          //         "SKY\nIS THE\nLIMIT",
+                          //         style: AppTextStyle.neueHaasWhiteFont
+                          //             .copyWith(
+                          //                 color: pureWhite,
+                          //                 fontWeight: FontWeight.w800,
+                          //                 fontSize:
+                          //                     (Get.width > 600 ? 50 : 22) *
+                          //                         SizeConfig.textMultiplier!),
+                          //       ),
+                          //     ),
+                          //   ),
+                          // ),
                           if (Get.width > 600)
                             Positioned(
                               top: 10,

@@ -5,23 +5,22 @@ import 'package:test/web-app/core/responsive/SizeConfig.dart';
 import '../constants/app-text-style.dart';
 
 class CustomButton extends StatelessWidget {
-  CustomButton(
-      {Key? key,
-      this.buttonColor = yellow,
-      this.borderRadius = 4,
-      this.width,
-      this.splashColor = orange232,
-      required this.text,
-      this.onPressed,
-      this.textStyle})
-      : super(key: key);
   final Color buttonColor;
   final double borderRadius;
   final double? width;
   final Color splashColor;
   final String text;
   final TextStyle? textStyle;
-  VoidCallback? onPressed;
+  final VoidCallback? onPressed;
+  const CustomButton(
+      {super.key,
+      this.buttonColor = yellow,
+      this.borderRadius = 4,
+      this.width,
+      this.splashColor = orange232,
+      required this.text,
+      this.onPressed,
+      this.textStyle});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +33,7 @@ class CustomButton extends StatelessWidget {
             onPressed: onPressed,
             style: TextButton.styleFrom(
                 animationDuration: const Duration(milliseconds: 300),
-                primary: splashColor,
+                foregroundColor: splashColor,
                 textStyle: textStyle ??
                     AppTextStyle.ttCommon16.copyWith(
                       fontSize: 12 * SizeConfig.textMultiplier!,

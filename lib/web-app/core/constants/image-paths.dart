@@ -20,4 +20,5 @@ class ImagePath {
   static String carousal7 = "assets/images/carousal8.png";
   static String footerBG = "assets/images/footer_bg.png";
   static String founderImage = "assets/images/founder.jpeg";
+  static String skyisthelimitLogo = "assets/images/skyisthelimitlogo.png";
 }

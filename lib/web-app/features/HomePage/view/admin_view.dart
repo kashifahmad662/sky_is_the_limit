@@ -12,6 +12,8 @@ import 'package:test/web-app/features/HomePage/controller/homePage-Controller.da
 import 'package:url_launcher/url_launcher.dart';
 
 class UserInformation extends StatefulWidget {
+  const UserInformation({super.key});
+
   @override
   _UserInformationState createState() => _UserInformationState();
 }

@@ -13,16 +13,16 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
-  firebase_core: ^2.4.0
-  get: ^4.6.5
+  flutter_lints: ^3.0.2
+  firebase_core: ^2.28.0
+  get: ^4.6.6
   carousel_slider:
-  intl: ^0.17.0
-  cloud_firestore: ^4.2.0
-  flutter_screenutil: ^5.6.0
-  dropdown_button2: ^1.9.2
-  flutter_custom_clippers: ^2.0.0
-  url_launcher: ^6.1.7
+  intl: ^0.19.0
+  cloud_firestore: ^4.16.0
+  flutter_screenutil: ^5.9.0
+  dropdown_button2: ^2.3.9
+  flutter_custom_clippers: ^2.1.0
+  url_launcher: ^6.2.5
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

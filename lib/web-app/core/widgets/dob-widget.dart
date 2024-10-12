@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:test/web-app/core/constants/responsive_ui.dart';
 
 import '../constants/app-text-style.dart';
 import '../constants/colors.dart';

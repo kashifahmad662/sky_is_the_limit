@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test/web-app/core/constants/app-text-style.dart';
 import 'package:test/web-app/core/constants/colors.dart';
@@ -21,7 +20,7 @@ class FooterUI extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-          color: Color(0xff384141),
+          color: const Color(0xff384141),
           image: DecorationImage(
               image: AssetImage(
                 ImagePath.footerBG,
@@ -260,7 +259,7 @@ class FooterUI extends StatelessWidget {
                     hint: 'password',
                     isObsecure: true,
                     onChanged: () {},
-                    suffixWidget: SizedBox(),
+                    suffixWidget:const SizedBox(),
                     textEditingController: password,
                     textInputType: TextInputType.text,
                     subLabel: '',
@@ -289,7 +288,7 @@ class FooterUI extends StatelessWidget {
                                   builder: (context) => UserInformation()));
                         } else {
                           ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text("Invalid Credentials!")));
+                             const SnackBar(content: Text("Invalid Credentials!")));
                         }
                       },
                       textStyle:

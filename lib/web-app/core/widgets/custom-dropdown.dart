@@ -1,30 +1,28 @@
-import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:test/web-app/core/constants/responsive_ui.dart';
 import 'package:test/web-app/core/responsive/SizeConfig.dart';
 
 import '../constants/app-text-style.dart';
 import '../constants/colors.dart';
+import 'package:dropdown_button2/dropdown_button2.dart';
 
 class CustomDropDown extends StatelessWidget {
-  CustomDropDown(
-      {this.labelText,
+  final List<String> listofItems;
+  final void Function(String?)? onChanged;
+  final String? hint;
+  final String? labelText;
+  final String? value;
+  final double? width;
+  final Color? color;
+  const CustomDropDown(
+      {super.key,
+      this.labelText,
       this.width,
       required this.hint,
       required this.listofItems,
       required this.onChanged,
       required this.value,
       required this.color});
-
-  List<String> listofItems;
-  void Function(String?)? onChanged;
-  String? hint;
-  String? labelText;
-  String? value;
-  double? width;
-  Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +54,7 @@ class CustomDropDown extends StatelessWidget {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Container(
-                  width: Get.width,
+                  // width: Get.width,
                   decoration: BoxDecoration(
                       border: Border.all(
                         width: 1 * SizeConfig.widthMultiplier!,
@@ -64,17 +62,7 @@ class CustomDropDown extends StatelessWidget {
                       ),
                       borderRadius: BorderRadius.circular(5)),
                   child: DropdownButton2(
-                    // selectedItemBuilder: (context) {
-                    //   return [
-                    //     Text(
-                    //       value ?? '',
-                    //       style: AppTextStyle.regularBlack62Text.copyWith(
-                    //           fontSize: ResponsiveWidget.isWebScreen
-                    //               ? 18 * SizeConfig.textMultiplier!
-                    //               : 14 * SizeConfig.textMultiplier!),
-                    //     )
-                    //   ];
-                    // },
+                   
                     isDense: true,
                     style: AppTextStyle.regularBlack62Text.copyWith(
                         fontSize: ResponsiveWidget.isWebScreen
@@ -90,9 +78,9 @@ class CustomDropDown extends StatelessWidget {
                               : 14 * SizeConfig.textMultiplier!),
                       overflow: TextOverflow.ellipsis,
                     ),
-                    buttonHeight: ResponsiveWidget.isWebScreen
-                        ? 50 * SizeConfig.heightMultiplier!
-                        : 40 * SizeConfig.heightMultiplier!,
+                    // buttonHeight: ResponsiveWidget.isWebScreen
+                    //     ? 50 * SizeConfig.heightMultiplier!
+                    //     : 40 * SizeConfig.heightMultiplier!,
                     underline: Container(),
                     items: listofItems
                         .map((item) => DropdownMenuItem<String>(
@@ -118,35 +106,20 @@ class CustomDropDown extends StatelessWidget {
                         .toList(),
                     value: value,
                     onChanged: onChanged,
-                    icon: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Icon(
-                        Icons.keyboard_arrow_down_sharp,
-                        size: 15 * SizeConfig.imageSizeMultiplier!,
-                        color: color,
-                      ),
-                    ),
-                    buttonDecoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(14),
-                      border: Border.all(
-                        color: Colors.transparent,
-                      ),
-                    ),
-                    dropdownMaxHeight: 296 * SizeConfig.heightMultiplier!,
-                    dropdownPadding: null,
-                    buttonPadding: ResponsiveWidget.isWebScreen
-                        ? EdgeInsets.symmetric(
-                            horizontal: 0 * SizeConfig.widthMultiplier!,
-                            vertical: 0 * SizeConfig.heightMultiplier!)
-                        : null,
-                    dropdownDecoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(0),
-                      color: Colors.white,
-                    ),
-                    dropdownElevation: 1,
-                    scrollbarRadius: const Radius.circular(40),
-                    scrollbarThickness: 6,
-                    scrollbarAlwaysShow: true,
+                    // icon: Align(
+                    //   alignment: Alignment.centerLeft,
+                    //   child: Icon(
+                    //     Icons.keyboard_arrow_down_sharp,
+                    //     size: 15 * SizeConfig.imageSizeMultiplier!,
+                    //     color: color,
+                    //   ),
+                    // ),
+                    // buttonDecoration: BoxDecoration(
+                    //   borderRadius: BorderRadius.circular(14),
+                    //   border: Border.all(
+                    //     color: Colors.transparent,
+                    //   ),
+                    // ),
                   ),
                 ),
               ))
